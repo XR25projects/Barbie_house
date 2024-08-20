@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Barbie_doll_house.sln"
+    "dotnet.defaultSolution": "Barbie_house.sln"
 }
