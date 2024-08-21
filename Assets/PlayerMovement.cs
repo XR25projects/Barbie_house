@@ -18,11 +18,10 @@ public class PlayerMovement : MonoBehaviour
         // Get the primary thumbstick's input
         Vector2 input = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
 
-        // Calculate the movement direction based on the VR camera's forward direction
-        Vector3 moveDirection = vrCamera.forward * input.y + vrCamera.right * input.x;
+        Debug.Log("VRPosition" + input.x + " " + input.y);
 
-        // Flatten the movement direction on the Y axis to prevent vertical movement
-        moveDirection.y = 0;
+        // Calculate the movement direction based on the VR camera's forward direction
+        Vector3 moveDirection = new  Vector3 (input.x, 0, input.y).normalized;
 
         // Move the character controller in the calculated direction
         characterController.Move(moveDirection * speed * Time.deltaTime);
